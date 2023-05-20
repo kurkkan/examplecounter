@@ -1,5 +1,21 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -7,7 +23,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Counter App
+        <Counter />
         </p>
         <a
           className="App-link"
@@ -18,6 +35,7 @@ function App() {
           Learn React
         </a>
       </header>
+    
     </div>
   );
 }
